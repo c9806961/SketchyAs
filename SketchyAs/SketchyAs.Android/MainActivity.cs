@@ -30,4 +30,5 @@ namespace SketchyAs.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
+
 }

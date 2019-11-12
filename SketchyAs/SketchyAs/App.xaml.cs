@@ -6,11 +6,13 @@ namespace SketchyAs
 {
     public partial class App : Application
     {
+        public static SketchyLang Lang;
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            //if lang = lang - Dfault to engligh for now
+            Lang = new English();
+            MainPage = new NavigationPage(new MainMenu());
         }
 
         protected override void OnStart()
@@ -27,5 +29,10 @@ namespace SketchyAs
         {
             // Handle when your app resumes
         }
+    }
+
+    public interface ICloseApplication
+    {
+        void closeApplication();
     }
 }
