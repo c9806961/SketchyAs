@@ -19,11 +19,13 @@ namespace SketchyAs
 
         List<SketchyPath> completedPaths = new List<SketchyPath>();
 
+        List<SketchyPath> undonePaths = new List<SketchyPath>();
+
         SKColor currentColour;
 
         float currentStrokeWidth;
 
-        bool currentIsErasor;
+        bool currentIsEraser;
 
         SKColor currentBGColour;
         public SketchyCanvas()
@@ -31,8 +33,9 @@ namespace SketchyAs
             InitializeComponent();
             currentColour = SKColors.Blue;
             currentStrokeWidth = 10;
-            currentIsErasor = false;
-            currentBGColour = SKColors.White;
+            currentIsEraser = false;
+            currentBGColour = SKColors.LightGray;
+            canvasView.BackgroundColor = SkiaSharp.Views.Forms.Extensions.ToFormsColor(currentBGColour);
         }
 
         struct SketchyPath
@@ -56,36 +59,49 @@ namespace SketchyAs
             {
                 case "Red":
                     currentColour = SKColors.Red;
-                    currentIsErasor = false;
+                    currentIsEraser = false;
                     break;
                 case "Blue":
                     currentColour = SKColors.Blue;
-                    currentIsErasor = false;
+                    currentIsEraser = false;
                     break;
                 case "Yellow":
                     currentColour = SKColors.Yellow;
-                    currentIsErasor = false;
+                    currentIsEraser = false;
                     break;
                 case "Black":
                     currentColour = SKColors.Black;
-                    currentIsErasor = false;
+                    currentIsEraser = false;
                     break;
                 case "Brown":
                     currentColour = SKColors.Brown;
-                    currentIsErasor = false;
+                    currentIsEraser = false;
                     break;
                 case "Green":
                     currentColour = SKColors.Green;
-                    currentIsErasor = false;
+                    currentIsEraser = false;
+                    break;
+                case "White":
+                    currentColour = SKColors.White;
+                    currentIsEraser = false;
                     break;
                 case "Eraser":
                     currentColour = currentBGColour;
-                    currentIsErasor = true;
+                    currentIsEraser = true;
                     break;
                 case "Undo":
                     if (completedPaths.Count() > 0)
                     {
+                        undonePaths.Add(completedPaths[completedPaths.Count - 1]);
                         completedPaths.RemoveAt(completedPaths.Count - 1);
+                        canvasView.InvalidateSurface();
+                    }
+                    break;
+                case "Redo":
+                    if (undonePaths.Count() > 0)
+                    {
+                        completedPaths.Add(undonePaths[undonePaths.Count - 1]);
+                        undonePaths.RemoveAt(undonePaths.Count - 1);
                         canvasView.InvalidateSurface();
                     }
                     break;
@@ -99,17 +115,17 @@ namespace SketchyAs
                         currentStrokeWidth = 10;
                     break;
                 case "Background":
-                    if (currentBGColour == SKColors.White)
-                        currentBGColour = SKColors.Beige;
+                    if (currentBGColour == SKColors.LightGray)
+                        currentBGColour = SKColors.Gray;
                     else
-                        currentBGColour = SKColors.White;
+                        currentBGColour = SKColors.LightGray;
                     foreach (SketchyPath path in completedPaths)
                     {
                         if (path.IsEraser)
                             path.Paint.Color = currentBGColour;
                     }
                     canvasView.BackgroundColor = SkiaSharp.Views.Forms.Extensions.ToFormsColor(currentBGColour);
-                    if (currentIsErasor)
+                    if (currentIsEraser)
                         currentColour = currentBGColour;
                     canvasView.InvalidateSurface();
                     break;
@@ -121,7 +137,7 @@ namespace SketchyAs
 
         void OnTouchEffectAction(object sender, TouchActionEventArgs args)
         {
-
+            undonePaths = new List<SketchyPath>();
             switch (args.Type)
             {
                 case TouchActionType.Pressed:
@@ -137,7 +153,7 @@ namespace SketchyAs
                             StrokeJoin = SKStrokeJoin.Round
                         };
                         path.MoveTo(ConvertToPixel(args.Location));
-                        inProgressPaths.Add(args.Id, new SketchyPath(path,paint, currentIsErasor));
+                        inProgressPaths.Add(args.Id, new SketchyPath(path,paint, currentIsEraser));
                         canvasView.InvalidateSurface();
                     }
                     break;

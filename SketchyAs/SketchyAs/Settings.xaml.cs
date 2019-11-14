@@ -19,7 +19,6 @@ namespace SketchyAs
 
         public void OnExitClicked(object sender, EventArgs args)
         {
-            // maybe look at a better way to do this, not sure if it works for IOS
             Navigation.PushAsync(new MainMenu());
         }
     }

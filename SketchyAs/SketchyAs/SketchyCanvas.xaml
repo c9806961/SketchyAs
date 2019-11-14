@@ -16,6 +16,12 @@
                     Clicked="OnColourClicked"
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Redo"
+                    ClassId="Redo"
+                    Text="Redo"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
                 <Button x:Name="BrushSize"
                     ClassId="BrushSize"
                     Text="Brush Size"
@@ -72,6 +78,12 @@
                     Clicked="OnColourClicked"
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="White"
+                    ClassId="White"
+                    Text="White"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
                 <Button x:Name="Eraser"
                     ClassId="Eraser"
                     Text="Eraser"
@@ -83,8 +95,7 @@
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
                 <skia:SKCanvasView x:Name="canvasView"
-                                   PaintSurface="OnCanvasViewPaintSurface"
-                                   BackgroundColor="White"/>
+                                   PaintSurface="OnCanvasViewPaintSurface" />
             <Grid.Effects>
                 <tt:TouchEffect Capture="True"
                                     TouchAction="OnTouchEffectAction" />
