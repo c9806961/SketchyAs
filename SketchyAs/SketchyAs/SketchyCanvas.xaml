@@ -3,13 +3,87 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
              mc:Ignorable="d"
              x:Class="SketchyAs.SketchyCanvas">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Undo"
+                    ClassId="Undo"
+                    Text="Undo"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Background"
+                    ClassId="Background"
+                    Text="Background"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Next"
+                    ClassId="Next"
+                    Text="Next"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Blue"
+                    ClassId="Blue"
+                    Text="Blue"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Black"
+                    ClassId="Black"
+                    Text="Black"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Green"
+                    ClassId="Green"
+                    Text="Green"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Yellow"
+                    ClassId="Yellow"
+                    Text="Yellow"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Red"
+                    ClassId="Red"
+                    Text="Red"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Brown"
+                    ClassId="Brown"
+                    Text="Brown"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="Eraser"
+                    ClassId="Eraser"
+                    Text="Eraser"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <Grid BackgroundColor="White"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+                <skia:SKCanvasView x:Name="canvasView"
+                                   PaintSurface="OnCanvasViewPaintSurface"
+                                   BackgroundColor="White"/>
+            <Grid.Effects>
+                <tt:TouchEffect Capture="True"
+                                    TouchAction="OnTouchEffectAction" />
+            </Grid.Effects>
+        </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
