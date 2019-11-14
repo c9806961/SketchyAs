@@ -16,6 +16,12 @@
                     Clicked="OnColourClicked"
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="BrushSize"
+                    ClassId="BrushSize"
+                    Text="Brush Size"
+                    Clicked="OnColourClicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"/>
                 <Button x:Name="Background"
                     ClassId="Background"
                     Text="Background"

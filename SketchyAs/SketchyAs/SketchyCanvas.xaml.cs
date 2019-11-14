@@ -92,6 +92,12 @@ namespace SketchyAs
                 case "Next":
                     Navigation.PushAsync(new MainMenu());
                     break;
+                case "BrushSize":
+                    if (currentStrokeWidth < 30)
+                        currentStrokeWidth += 10;
+                    else
+                        currentStrokeWidth = 10;
+                    break;
                 case "Background":
                     if (currentBGColour == SKColors.White)
                         currentBGColour = SKColors.Beige;
@@ -104,9 +110,7 @@ namespace SketchyAs
                     }
                     canvasView.BackgroundColor = SkiaSharp.Views.Forms.Extensions.ToFormsColor(currentBGColour);
                     if (currentIsErasor)
-                    {
                         currentColour = currentBGColour;
-                    }
                     canvasView.InvalidateSurface();
                     break;
                 default:
