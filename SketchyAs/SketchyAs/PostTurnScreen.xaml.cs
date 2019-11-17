@@ -31,7 +31,7 @@ namespace SketchyAs
         public void OnEndClicked(object sender, EventArgs args)
         {
             App.playerGuesses.Add(Guess.Text);
-            Navigation.PushModalAsync(new MainMenu());
+            Navigation.PushModalAsync(new FinalScreen());
         }
     }
 }

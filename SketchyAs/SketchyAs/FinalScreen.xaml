@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SketchyAs.FinalScreen">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="HAHA! All these drawings are really great lol. What a fucking funny game! Why don't you buy an high quality t-shirt of all of them?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Exit"
+                Clicked="OnExitClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

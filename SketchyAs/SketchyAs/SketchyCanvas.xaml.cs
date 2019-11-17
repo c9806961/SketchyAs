@@ -137,8 +137,7 @@ namespace SketchyAs
             // Save the drawing to an Image array for later use
             SKBitmap bitmap = new SKBitmap((int)canvasView.Width, (int)canvasView.Height);
             SKCanvas canvas = new SKCanvas(bitmap);
-            canvas.Clear();
-
+            canvas.Clear(currentBGColour);
             foreach (SketchyPath path in completedPaths)
             {
                 canvas.DrawPath(path.Path, path.Paint);
