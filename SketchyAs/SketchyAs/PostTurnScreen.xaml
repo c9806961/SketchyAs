@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SketchyAs.PostTurnScreen">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="What did you draw?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Text=""
+                x:Name="Guess" />
+            <Button Text="Next Player"
+                    Clicked="OnNextClicked"/>
+            <Button Text="End Game"
+                    x:Name="EndButton"
+                    Clicked="OnEndClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

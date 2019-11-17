@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SketchyAs.PromptScreen">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="You shoud draw:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text=""
+                x:Name="Prompt"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="New Prompt"
+                    Clicked="OnPromptClicked"/>
+            <Button Text="Start turn"
+                    Clicked="OnStartClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

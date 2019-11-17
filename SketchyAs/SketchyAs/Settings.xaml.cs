@@ -14,12 +14,15 @@ namespace SketchyAs
     {
         public Settings()
         {
+            Navigation.RemovePage(App.lastPage);
+            App.lastPage = this;
             InitializeComponent();
         }
 
         public void OnExitClicked(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new MainMenu());
+            App.lastPage = this;
+            Navigation.PushModalAsync(new MainMenu());
         }
     }
 }

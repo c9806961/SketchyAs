@@ -30,6 +30,8 @@ namespace SketchyAs
         SKColor currentBGColour;
         public SketchyCanvas()
         {
+            Navigation.RemovePage(App.lastPage);
+            App.lastPage = this;
             InitializeComponent();
             currentColour = SKColors.Blue;
             currentStrokeWidth = 10;
@@ -51,39 +53,34 @@ namespace SketchyAs
                 IsEraser = isEraser;
             }
         }
-        public void OnColourClicked(object sender, EventArgs args)
+        public void OnClicked(object sender, EventArgs args)
         {
             // change colour
             Button b = (Button)sender;
+            if (b.ClassId.Contains("Colour"))
+                currentIsEraser = false;
             switch (b.ClassId)
             {
-                case "Red":
+                case "ColourRed":
                     currentColour = SKColors.Red;
-                    currentIsEraser = false;
                     break;
-                case "Blue":
+                case "ColourBlue":
                     currentColour = SKColors.Blue;
-                    currentIsEraser = false;
                     break;
-                case "Yellow":
+                case "ColourYellow":
                     currentColour = SKColors.Yellow;
-                    currentIsEraser = false;
                     break;
-                case "Black":
+                case "ColourBlack":
                     currentColour = SKColors.Black;
-                    currentIsEraser = false;
                     break;
-                case "Brown":
+                case "ColourBrown":
                     currentColour = SKColors.Brown;
-                    currentIsEraser = false;
                     break;
-                case "Green":
+                case "ColourGreen":
                     currentColour = SKColors.Green;
-                    currentIsEraser = false;
                     break;
-                case "White":
+                case "ColourWhite":
                     currentColour = SKColors.White;
-                    currentIsEraser = false;
                     break;
                 case "Eraser":
                     currentColour = currentBGColour;
@@ -106,7 +103,7 @@ namespace SketchyAs
                     }
                     break;
                 case "Next":
-                    Navigation.PushAsync(new MainMenu());
+                    EndTurn();
                     break;
                 case "BrushSize":
                     if (currentStrokeWidth < 30)
@@ -135,6 +132,27 @@ namespace SketchyAs
             }
         }
 
+        public void EndTurn()
+        {
+            // Save the drawing to an Image array for later use
+            SKBitmap bitmap = new SKBitmap((int)canvasView.Width, (int)canvasView.Height);
+            SKCanvas canvas = new SKCanvas(bitmap);
+            canvas.Clear();
+
+            foreach (SketchyPath path in completedPaths)
+            {
+                canvas.DrawPath(path.Path, path.Paint);
+            }
+
+            foreach (SketchyPath path in inProgressPaths.Values)
+            {
+                canvas.DrawPath(path.Path, path.Paint);
+            }
+            SKImage image = SKImage.FromBitmap(bitmap);
+            App.playerDrawings.Add(image);
+            // goto next screen
+            Navigation.PushModalAsync(new PostTurnScreen());
+        }
         void OnTouchEffectAction(object sender, TouchActionEventArgs args)
         {
             undonePaths = new List<SketchyPath>();
@@ -176,7 +194,7 @@ namespace SketchyAs
                     }
                     break;
 
-                case TouchActionType.Cancelled:
+                case TouchActionType.Cancelled: // I don't know when this happens
                     if (inProgressPaths.ContainsKey(args.Id))
                     {
                         inProgressPaths.Remove(args.Id);

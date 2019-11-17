@@ -4,6 +4,7 @@ namespace SketchyAs
 {
     public class English : SketchyLang
     {
+        bool first = true; // for testing remove
         public English()
         {
             Language = "English";
@@ -15,7 +16,13 @@ namespace SketchyAs
         {
             // generate a prompt, else return base value
             string output = "";
-            output = "This is an english prompt";
+            //START fortesting remove after
+            if (first)
+                output = "This is an english prompt";
+            else
+                output = "This is  a different english prompt";
+            first = !first;
+            //END fortesting remove after
             // if it fails to generate a prompt for some reason
             if (output.Equals(""))
                 output = base.getPrompt(nsfw);

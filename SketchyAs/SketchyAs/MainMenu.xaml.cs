@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace SketchyAs
     {
         public MainMenu()
         {
+            Navigation.RemovePage(App.lastPage);
+            App.lastPage = this;
             InitializeComponent();
         }
 
@@ -24,12 +27,15 @@ namespace SketchyAs
 
         public void OnPlayClicked(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new SketchyCanvas());
+            App.playerNames = new List<string>();
+            App.playerGuesses = new List<string>();
+            App.playerDrawings = new List<SKImage>();
+            Navigation.PushModalAsync(new NameEntry());
         }
 
         public void OnSettingsClicked(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new Settings());
+            Navigation.PushModalAsync(new Settings());
         }
     }
 
