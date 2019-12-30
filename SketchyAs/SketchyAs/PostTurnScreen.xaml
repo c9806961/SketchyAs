@@ -10,9 +10,19 @@
             <Label Text="What did you draw?"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Entry Text=""
-                x:Name="Guess" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Entry Text="" x:Name="Guess" Grid.Column="0"/>
+                <Button Text="X" x:Name="Del" Clicked="OnDelClicked" Grid.Column="1"/>
+            </Grid>
             <Button Text="Next Player"
+                    x:Name="NextButton"
                     Clicked="OnNextClicked"/>
             <Button Text="End Game"
                     x:Name="EndButton"

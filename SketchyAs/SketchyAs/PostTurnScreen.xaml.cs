@@ -17,8 +17,13 @@ namespace SketchyAs
             Navigation.RemovePage(App.lastPage);
             App.lastPage = this;
             InitializeComponent();
-            if (App.playerNames.Count() == 1) // if first player
+            if (App.playerNames.Count() == 1)
+            {
                 EndButton.IsVisible = false;
+                Guess.Text = App.playerGuesses[0];
+            }
+            if (App.playerNames.Count() == App.maxPlayers)
+                NextButton.IsVisible = false;
         }
         public void OnNextClicked(object sender, EventArgs args)
         {
@@ -32,6 +37,14 @@ namespace SketchyAs
         {
             App.playerGuesses.Add(Guess.Text);
             Navigation.PushModalAsync(new FinalScreen());
+        }
+        public void OnDelClicked(object sender, EventArgs args)
+        {
+            Guess.Text = "";
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

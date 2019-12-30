@@ -7,6 +7,7 @@ namespace SketchyAs
   {
 
         public string Language { get; set; } = "none";
+        public string ShortName { get; set; } = "none";
         public Dictionary<string, string> TransList;
 
         public SketchyLang()
@@ -37,13 +38,13 @@ namespace SketchyAs
         }
 
         // loadPromptWords to be overridden is subclasses as types of words changes from language to language
-        public virtual bool loadPromptWords()
+        public virtual bool loadPromptWords(List<string> packs)
         {
             return true;
         }
 
         // getPrompt to be overridden is subclasses as the sentence structure changes from language to language
-        public virtual string getPrompt(bool nsfw)
+        public virtual string getPrompt()
         {
             // generate the prompt here
             return "No prompt available";

@@ -28,5 +28,13 @@ namespace SketchyAs
             else // show the last players drawing
               Navigation.PushModalAsync(new PreviewScreen());
         }
+        public void OnDelClicked(object sender, EventArgs args)
+        {
+            PlayerName.Text = "";
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
     }
 }

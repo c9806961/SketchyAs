@@ -30,12 +30,17 @@ namespace SketchyAs
             App.playerNames = new List<string>();
             App.playerGuesses = new List<string>();
             App.playerDrawings = new List<SKImage>();
+            App.playerTimes = new List<int>();
             Navigation.PushModalAsync(new NameEntry());
         }
 
         public void OnSettingsClicked(object sender, EventArgs args)
         {
             Navigation.PushModalAsync(new Settings());
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 

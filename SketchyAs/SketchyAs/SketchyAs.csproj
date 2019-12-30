@@ -6,6 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Lang\EN-nsfw.txt" />
+    <None Remove="Lang\EN-scifi.txt" />
+    <None Remove="Lang\EN-words.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Lang\EN-nsfw.txt" />
+    <EmbeddedResource Include="Lang\EN-scifi.txt" />
+    <EmbeddedResource Include="Lang\EN-words.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
     <PackageReference Include="TouchTracking.Forms" Version="1.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />

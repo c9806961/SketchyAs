@@ -7,9 +7,19 @@
              x:Class="SketchyAs.FinalScreen">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="HAHA! All these drawings are really great lol. What a fucking funny game! Why don't you buy an high quality t-shirt of all of them?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <CarouselView x:Name="MyCarousel"
+                          Scrolled="MyCarousel_Scrolled">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding .}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <Label x:Name="PlayerName"></Label>
+            <Label x:Name="PlayerGuess"></Label>
+            <Label x:Name="TimeTaken"></Label>
             <Button Text="Exit"
                 Clicked="OnExitClicked" />
         </StackLayout>

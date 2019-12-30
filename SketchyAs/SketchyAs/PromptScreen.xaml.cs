@@ -17,17 +17,21 @@ namespace SketchyAs
             Navigation.RemovePage(App.lastPage);
             App.lastPage = this;
             InitializeComponent();
-            Prompt.Text = App.Lang.getPrompt(App.nsfw);
+            Prompt.Text = App.Lang.getPrompt();
         }
 
         public void OnPromptClicked(object sender, EventArgs args)
         {
-            Prompt.Text = App.Lang.getPrompt(App.nsfw);
+            Prompt.Text = App.Lang.getPrompt();
         }
         public void OnStartClicked(object sender, EventArgs args)
         {
             App.playerGuesses.Add(Prompt.Text);
             Navigation.PushModalAsync(new SketchyCanvas());
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

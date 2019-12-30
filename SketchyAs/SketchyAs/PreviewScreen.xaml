@@ -8,6 +8,9 @@
              x:Class="SketchyAs.PreviewScreen">
     <ContentPage.Content>
         <StackLayout>
+            <Label x:Name="TimerLabel"
+                   Text="TimerLabel"
+                   HorizontalOptions="CenterAndExpand" />
             <Label Text="Check out what"
                    x:Name="CheckOut"
                    HorizontalOptions="CenterAndExpand" />

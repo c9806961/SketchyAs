@@ -1,0 +1,7 @@
+modifier:shiny
+colour:green
+commonnounsthatcandothings:alien
+descriptor:quickly
+verbs:blasting
+commonnounsthatcanbedoneto:wookie
+propernouns:Darth Vader

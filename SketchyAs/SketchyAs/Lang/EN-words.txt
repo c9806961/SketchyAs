@@ -1,0 +1,15 @@
+modifier:adorable,angry,beautiful,crazy,dirty,fat,fuzzy,grumpy,happy,huge,mad,muscular,overweight,puny,sad,scared,scary,shy,short,skinny,small,smelly,smiling,tall,tough,ugly,wise
+
+colour:black,white,blue,red,yellow,brown,green,pink
+
+commonnounsthatcandothings:man/men,woman/women,child/children,bride,groom,dog,cat,horse,pig,cow,chicken,sheep/sheep,bird,lizard,monkey,tiger,lion,bear,giraffe,elephant,rhino,hippo,fish/fishes,zebra,flamingo,mouse/mice,rat,snake,spider,cockroach/cockroaches,turtle,owl,polar bear,crocodile,guinea pig,rabbit,butterfly/butterflies,penguin,alpaca,priest,artist,chef,pilot,waiter,waitress/waitresses,maid,doctor,teacher,dentist,lawyer,mechanic,nurse,fireman/firemen,policeman/policemen,policewoman/policewomen,actor,musician,photographer,dancer,singer,veterinarian,burglar,sandwich artist,unicorn,dragon,mermaid,fairy/fairies,werewolf/werewolves,ghoul,centaur,demon,elf/elves,dwarf/dwarves,orc,goblin,medusa,pegasus/pegasuses,sphinx,vampire,zombie,alien,wizard,Simon/Simons,Andrew/Andrews,dinosaur
+
+commonnounsthatcanbedoneto:hat,shirt,pants/pants,pair of trousers/trousers,bra,bikini,socks/socks,pair of underwear/underwear,beanie,scarf/scarves,car,boat,motorbike,bicycle,truck,ute,yacht,convertible,house,pillow,bed,table,book,oven,stove,toilet,phone,$10 note/money,beer,wine,spoon,knife/knives,fork,plate,glass/glasses,pen,pencil,paintbrush/paintbrushes,teatowel,towel,bedspread,taco,spaghetti/bowls of spaghetti,cheeseburger,garden salad,apple,banana,orange,grape,pepperoni pizza,chocolate milkshake,refreshing Coca Cola,martini,vodka lime and soda,orange juice,coffee,craft beer,burrito,ceasar salad,Gluten free bread,cheese
+
+descriptor:quietly,secretly,happily,angrily
+
+verbs:jumping over,throwing,hiding under,sitting on,lying on,stepping on,lifting up,bumping into,hiding behind,dancing with,singing at,setting fire to,kicking,breaking,thinking about,smelling,watching,touching,yelling at,dreaming about,sleeping on,listening to,talking to,crying over,having a good time with,having a cup of tea with,eating
+
+propernouns:Michelle,Mitch,Jono,Jeff,Jacqui,Simon,Coppard,Michael,Cat,Stefan,Asif,Holly,Tim,Mark,Mary,Crombie,Ken,Kate,Cameron,Elizabeth,Jordan,Tom,Donald Trump,Julia Gillard,Terminator,Darth Vader,Stormtooper,Ron Burgundy,Batman,Groot,Harry Potter,Wolverine,ET,Yoda,Iron Man,The Joker,Santa Claus,The Easter Bunny,The Tooth Fairy,Robin Hood,Dracula,Sherlock Holmes,Frankenstein's Monster,King Kong,The Grim Reaper,Baby Yoda,Cthulhu,Aladdin,Rapunzel,Thor,Tarzan,Captain Hook,Peter Pan,Tinkerbell,Pinocchio,Ariel,Cinderella,Mulan,Snow White
+
+places:in Paris,in New York,in Sydney,in a bedroom,at the beach,at a restaurant,at a park,in pyjamas,at the pool,in a city,in a forest,in the bath,in a dress,on a cruise ship,under a waterfall

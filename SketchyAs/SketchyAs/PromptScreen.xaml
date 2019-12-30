@@ -8,12 +8,12 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="You shoud draw:"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
             <Label Text=""
-                x:Name="Prompt"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                   x:Name="Prompt"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
             <Button Text="New Prompt"
                     Clicked="OnPromptClicked"/>
             <Button Text="Start turn"

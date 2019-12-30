@@ -10,8 +10,17 @@
             <Label Text="Enter Name"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Entry Text="Player 1"
-                   x:Name="PlayerName"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Entry Text="Player1" x:Name="PlayerName" Grid.Column="0"/>
+                <Button Text="X" x:Name="Del" Clicked="OnDelClicked" Grid.Column="1"/>
+            </Grid>
             <Button Text="Start Turn" 
                     Clicked="OnStartClicked" />
         </StackLayout>

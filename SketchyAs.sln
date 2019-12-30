@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SketchyAs.Android", "Sketch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SketchyAs.iOS", "SketchyAs\SketchyAs.iOS\SketchyAs.iOS.csproj", "{9096DE92-8D30-4FEC-931F-C46777F4734C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SketchyAs", "SketchyAs\SketchyAs\SketchyAs.csproj", "{800F4CA5-3C39-4EEE-88D8-FB8733A3B054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SketchyAs", "SketchyAs\SketchyAs\SketchyAs.csproj", "{800F4CA5-3C39-4EEE-88D8-FB8733A3B054}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
